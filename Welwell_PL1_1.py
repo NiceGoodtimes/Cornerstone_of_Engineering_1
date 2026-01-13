@@ -12,8 +12,14 @@ def slope_calculator():
 
 def final_answer():
     if x1 == x2 and y1 == y2:
-        return "the lines form a point"
+        print("Alert: the points do not form a line")
+    elif x1 == x2:
+        print("Alert: the points form a vertical line\nSlope: Infinite")
+    elif y1 == y2:
+        print("Alert: the points form a horizontal line\nSlope: 0")
     else:
-        return "error"
+        print("slope: ", slope_calculator())
+    return 0
 
 #main
+final_answer()
