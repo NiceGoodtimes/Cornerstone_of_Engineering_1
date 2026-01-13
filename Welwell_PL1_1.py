@@ -21,5 +21,5 @@ def final_answer():
         print("slope: ", slope_calculator())
     return 0
 
-#main SECTION
+#main
 final_answer()
