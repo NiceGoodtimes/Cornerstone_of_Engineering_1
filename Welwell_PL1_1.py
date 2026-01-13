@@ -1,4 +1,4 @@
-#Variables
+#variables
 x1 = float(input("X of point 1: "))
 y1 = float(input("Y of point 1: "))
 
