@@ -18,9 +18,9 @@ def final_answer():
     if x1 == x2 and y1 == y2:
         print("Alert: the points do not form a line")
     elif x1 == x2:
-        print("Alert: the points form a vertical line\nSlope: Infinite")
+        print("Alert: the points form a vertical line\nx = ", x1)
     elif y1 == y2:
-        print("Alert: the points form a horizontal line\nSlope: 0")
+        print("Alert: the points form a horizontal line\ny = ", y1)
     else:
         print("y = ", slope_calculator(), "x + ", y_intercept())
     return 0
