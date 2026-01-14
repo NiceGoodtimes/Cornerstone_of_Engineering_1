@@ -10,6 +10,10 @@ def slope_calculator():
     m = (y2 - y1) / (x2 - x1)
     return m
 
+def y_intercept():
+    b = y1-(slope_calculator()*x1)
+    return b
+
 def final_answer():
     if x1 == x2 and y1 == y2:
         print("Alert: the points do not form a line")
@@ -18,7 +22,7 @@ def final_answer():
     elif y1 == y2:
         print("Alert: the points form a horizontal line\nSlope: 0")
     else:
-        print("slope: ", slope_calculator())
+        print("y = ", slope_calculator(), "x + ", y_intercept())
     return 0
 
 #main
