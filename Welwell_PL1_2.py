@@ -17,4 +17,4 @@ def molecular_weight():
     return result
 
 #main
-print("The molecular weight of the molecule is: ", molecular_weight(), "g/mol")
+print("The molecular weight of the molecule is: ", molecular_weight(), "grams/mole")
