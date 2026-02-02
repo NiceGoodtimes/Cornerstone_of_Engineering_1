@@ -17,7 +17,10 @@ for column in range(1,11):
             stars = column
             spaces = 11 - column
             printer(stars, "*")
+            printer(spaces, " ")
         elif is_even(row):
             stars = 11-column
             spaces = column
-            printer(stars, " ")
+            printer(stars, "*")
+            printer(spaces, " ")
+    print("") #goofy little print
