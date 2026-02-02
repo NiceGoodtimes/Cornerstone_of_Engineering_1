@@ -1,7 +1,6 @@
 #imports
-
+from python.personal_libraries import is_odd, is_even
 #variables
-column_tracker = 1
 stars = None
 spaces = None
 #functions
@@ -14,5 +13,11 @@ def printer(amount, character):
 #main
 for column in range(1,11):
     for row in range(1,5):
-        pass
-    column_tracker += 1
+        if is_odd(row):
+            stars = column
+            spaces = 11 - column
+            printer(stars, "*")
+        elif is_even(row):
+            stars = 11-column
+            spaces = column
+            printer(stars, " ")
