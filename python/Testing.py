@@ -1,26 +1,8 @@
-from cmath import inf
-from turtledemo.round_dance import stop
-import sys
-try:
-    sys.set_int_max_str_digits(0)
-except (AttributeError, ValueError):
-    pass
+def calculate(x):
+    print(x)
+    x = f"total calculation: "
 
 
-x = int(input("Enter an integer: "))
-final=1
+myTuple = ("it", "hurts", 5, 5123.2, None, True, False)
 
-if x==0:
-    print("Result: 1")
-    stop()
-
-while True:
-    #print(x)
-    final = final*x
-    x = abs(x-1)
-    if x==1:
-        break
-
-str(final)
-random_num = final.strip("0")
-print(random_num)
+calculate(myTuple)
