@@ -1,7 +1,9 @@
-from .numbers import is_even, is_odd
+from .numbers import is_even, is_odd, distance
 from .characters import character_printer
 
-__all__ = ["is_even", "is_odd", "character_printer"]
+__all__ = ["is_even", "is_odd", "distance",
+
+           "character_printer"]
 
 #version
-__version__ = "0.1.1"
+__version__ = "0.2.1"
