@@ -30,3 +30,14 @@ def factorial(x: int) -> int:
     for n in range(1, x):
         a = a * n
     return a
+
+#Checks if there has been a change in value of a variable x. n is a variable that increases per change in x
+def changed(x, n: int) -> bool:
+    n = n%2
+    values = []
+    values[n] = x
+    average = (values[0] + values[1])/2
+    if average != values[n]:
+        return True
+    else:
+        return False
