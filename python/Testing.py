@@ -1,8 +1,9 @@
-def calculate(x):
-    print(x)
-    x = f"total calculation: "
+x = 1.0
+y = 1.0
+dx = 0.1
 
-
-myTuple = ("it", "hurts", 5, 5123.2, None, True, False)
-
-calculate(myTuple)
+while x <= 2.5:
+    f = x + 3 * y/x
+    y = y + f*dx
+    x = x +dx
+    print(f"x = {x:.3} y = {y:.3}")
