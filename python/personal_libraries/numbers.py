@@ -23,3 +23,10 @@ def distance(initial: tuple, final: tuple) -> float:
         dimension_sum = dimension_sum + (initial[dimensions]**2 - final[dimensions]**2)
         dimensions -= 1
     return dimension_sum**0.5
+
+#factorial
+def factorial(x: int) -> int:
+    a = 0
+    for n in range(1, x):
+        a = a * n
+    return a
