@@ -3,17 +3,9 @@ from machine import Pin
 import time
 
 #variables
-seconds = 0
-n_cycle = 0
-n_blades = 3
+i_know_what_im_doing = False
 
 #functions
-"""
-def clock(seconds):
-    time.sleep(1)
-    seconds += 1
-    return seconds"""
-
 def changed(x, n):
     n = n%2
     values = []
@@ -24,11 +16,12 @@ def changed(x, n):
     else:
         return False
 
-def rpm(x):
-    blades_seen = 0
+def rpm(blades):
+    changes = 0
+    time_of_change = []
     if changed(infared_sensor.value(), n_cycle):
-        blades_seen += 1
-
+        time_of_change[changes] = time.time()
+        changes += 1
 
 #pins
 output = Pin(14, Pin.OUT)
@@ -36,7 +29,7 @@ infared_sensor = Pin(15, Pin.IN)
 
 #main
 while True:
-    n_cycle =+ 1
+    n_cycle =+ 1 #counts how many times program has been run
 
     print(infared_sensor.value())
     if infared_sensor.value() == 0:
