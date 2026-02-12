@@ -23,9 +23,10 @@ for bala0 in range(1,bala3,1):
     bala = bala + bala8*bala4
 print(f"Bala's Answer = {bala:.4}")
 """
-
-miles_gallon = 18
-dollar_gallon = 3
-miles = 183
-
-print(miles*dollar_gallon*(1/miles_gallon))
+mylist = [1,2,3,4,5]
+def what(x):
+    for i in x:
+        i + 2
+    return x
+what(mylist)
+print(mylist)
