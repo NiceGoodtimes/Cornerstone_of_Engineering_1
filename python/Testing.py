@@ -8,7 +8,7 @@ while x <= 2.5:
     y = y + f*dx
     x = x +dx
     print(f"x = {x:.3} y = {y:.3}")"""
-
+"""
 bala1 = 1.0
 bala2 = 2.0
 bala3 = 100
@@ -22,3 +22,10 @@ for bala0 in range(1,bala3,1):
     bala8 = bala7**2
     bala = bala + bala8*bala4
 print(f"Bala's Answer = {bala:.4}")
+"""
+
+miles_gallon = 18
+dollar_gallon = 3
+miles = 183
+
+print(miles*dollar_gallon*(1/miles_gallon))
