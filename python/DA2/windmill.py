@@ -4,8 +4,8 @@ import time
 
 #variables
 i_know_what_im_doing = False
-num_blades = 3
 cycle = 0
+change_count = 0
 
 #functions
 def changed(x, n):
@@ -18,6 +18,15 @@ def changed(x, n):
     else:
         return False
 
+def change_counter(a):
+    if changed(infared_sensor.value(), cycle):
+        global change_count
+        change_count += 1
+        return change_count
+    else:
+        global change_count
+        return change_count
+
 def rotational_calc(times):
     differences = [times[4] - times[2],
                    times[2] - times[0],
@@ -28,17 +37,10 @@ def rotational_calc(times):
     average_segment_time = sum(differences)/3
     return average_segment_time
 
+def rpm(changes):
+    x = changes % 6
 
-
-def rpm(times_run):
-    if times_run == 0:
-        changes = 0
-    time_of_change = []
-    if changed(infared_sensor.value(), cycle):
-        changes = changes % 6
-        time_of_change[changes] = time.time()
-        changes += 1
-
+    times = []
 
 #pins
 output = Pin(14, Pin.OUT)
