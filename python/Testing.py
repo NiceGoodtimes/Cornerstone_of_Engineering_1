@@ -23,7 +23,18 @@ for bala0 in range(1,bala3,1):
     bala = bala + bala8*bala4
 print(f"Bala's Answer = {bala:.4}")
 """
-def re_lister(value, list_length, n, list_to_add_to):
-    n % list_length
-    list_to_add_to[n] = value
-    return list_to_add_to
+#def re_lister(value, list_length, n, list_to_add_to):
+#    n % list_length
+#    list_to_add_to[n] = value
+#    return list_to_add_to
+
+x = 0
+
+def tester():
+    global x
+    x +=1
+    return x
+
+while True:
+    tester()
+    print(x)

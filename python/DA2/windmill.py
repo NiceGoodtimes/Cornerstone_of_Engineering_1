@@ -1,3 +1,8 @@
+"""
+Still need: put in while true
+Potentially: change time to be ms for accuracy
+"""
+
 #imports
 from machine import Pin
 import time
@@ -18,7 +23,7 @@ def changed(x, n):
     else:
         return False
 
-def change_counter(a):
+def change_counter():
     if changed(infared_sensor.value(), cycle):
         global change_count
         change_count += 1
@@ -37,10 +42,16 @@ def rotational_calc(times):
     average_segment_time = sum(differences)/3
     return average_segment_time
 
-def rpm(changes):
+def rpm(changes, run_cycle):
     x = changes % 6
+    time_list = []
 
-    times = []
+    if changes(changes, run_cycle):
+        time_list[x] = time.time()
+        return time_list
+    else:
+        return time_list
+
 
 #pins
 output = Pin(14, Pin.OUT)
@@ -48,7 +59,7 @@ infared_sensor = Pin(15, Pin.IN)
 
 #main
 while True:
-    rpm(cycle)
+    rpm(cycle, cycle)
     cycle =+ 1 #counts how many times program has been run
 
     print(infared_sensor.value())
