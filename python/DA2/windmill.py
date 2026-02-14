@@ -61,3 +61,4 @@ infared_sensor = Pin(15, Pin.IN)
 while True: #If you have another while true statement, put the following code there instead
     current_rpm = rotational_calc(rpm(change_count, cycle))
     cycle =+ 1 #counts how many times program has been run
+    #check for corruption
