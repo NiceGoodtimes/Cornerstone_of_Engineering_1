@@ -46,7 +46,7 @@ def rpm(changes, run_cycle):
     x = changes % 6
     time_list = []
 
-    if changes(changes, run_cycle):
+    if changed(changes, run_cycle):
         time_list[x] = time.time()
         return time_list
     else:
@@ -58,12 +58,6 @@ output = Pin(14, Pin.OUT)
 infared_sensor = Pin(15, Pin.IN)
 
 #main
-while True:
-    rpm(cycle, cycle)
+while True: #If you have another while true statement, put the following code there instead
+    rotational_calc(rpm(change_count, cycle))
     cycle =+ 1 #counts how many times program has been run
-
-    print(infared_sensor.value())
-    if infared_sensor.value() == 0:
-        output.value(1)
-    else:
-        output.value(0)
