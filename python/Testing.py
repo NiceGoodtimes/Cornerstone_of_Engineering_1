@@ -28,13 +28,5 @@ print(f"Bala's Answer = {bala:.4}")
 #    list_to_add_to[n] = value
 #    return list_to_add_to
 
-x = 0
-
-def tester():
-    global x
-    x +=1
-    return x
-
-while True:
-    tester()
-    print(x)
+x = [1,2,3]
+print(len(x))
