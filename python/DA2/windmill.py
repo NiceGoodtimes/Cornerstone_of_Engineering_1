@@ -1,16 +1,16 @@
-"""
-Still need: put in while true
-Potentially: change time to be ms for accuracy
+"""NOTES:
+
 """
 
 #imports
 from machine import Pin
 import time
 
-#variables
-i_know_what_im_doing = False
+#variables & pins
 cycle = 0
 change_count = 0
+sections = 3
+infrared_sensor = Pin(15, Pin.IN)
 
 #functions
 def changed(x, n):
@@ -24,12 +24,11 @@ def changed(x, n):
         return False
 
 def change_counter():
-    if changed(infared_sensor.value(), cycle):
-        global change_count
+    global change_count
+    if changed(infrared_sensor.value(), cycle):
         change_count += 1
         return change_count
     else:
-        global change_count
         return change_count
 
 def rotational_calc(times):
@@ -52,13 +51,8 @@ def rpm(changes, run_cycle):
     else:
         return time_list
 
-
-#pins
-output = Pin(14, Pin.OUT)
-infared_sensor = Pin(15, Pin.IN)
-
 #main
 while True: #If you have another while true statement, put the following code there instead
     current_rpm = rotational_calc(rpm(change_count, cycle))
-    cycle =+ 1 #counts how many times program has been run
+    cycle += 1 #counts how many times program has been run
     #check for corruption
