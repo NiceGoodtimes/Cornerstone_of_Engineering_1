@@ -1,5 +1,5 @@
 """NOTES:
--replaced time with milliseconds for greater accuracy
+-make sure placement of times function is correct
 """
 
 #imports
