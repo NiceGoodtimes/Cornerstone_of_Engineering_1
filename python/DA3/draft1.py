@@ -12,8 +12,7 @@ servo_out.freq(50)
 #functions
 """Photoresistor functions"""
 def downstep(photo_pin): #scales down photoresistor output
-    raw = photo_pin.read_16()
-    return raw // 5000
+    return photo_pin // 5000
 
 def balance(left: int, right:int): #determines which side receives more light
     diff = right - left
@@ -53,6 +52,10 @@ def spinner(x: list): #determines how to spin the servo
 
 #main
 while True:
-    left_real = downstep(photo_left_raw)
-    right_real = downstep(photo_right_raw)
-    pass
+    a = photo_left_raw.read_u16()
+    b = photo_right_raw.read_u16()
+
+    left_real = downstep(a)
+    right_real = downstep(b)
+
+    spinner(balance(left_real, right_real))
