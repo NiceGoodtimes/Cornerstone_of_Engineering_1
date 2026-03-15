@@ -4,8 +4,8 @@ from machine import Pin, PWM
 import time
 
 #global variables
-photo_left_raw = machine.ADC(27) #photoresistors quantify brightness
-photo_right_raw = machine.ADC(26)
+photo_left_pin = machine.ADC(27) #photoresistors quantify brightness
+photo_right_pin = machine.ADC(26)
 servo_out = PWM(Pin(0))
 servo_out.freq(50)
 
@@ -17,45 +17,38 @@ def downstep(photo_pin): #scales down photoresistor output
 def balance(left: int, right:int): #determines which side receives more light
     diff = right - left
     if diff < 0:
-        return [abs(diff), "L"]
+        return "L"
     elif diff > 0:
-        return [abs(diff), "R"]
+        return "R"
     else:
-        return [0, "C"]
+        return "C"
 
 """servo functions"""
 def set_servo(mode: int): #sets the mode of the servo
     servo_out.duty_u16(mode)
 
-def spinner(x: list): #determines how to spin the servo
+def spinner(x): #determines how to spin the servo
     forward = 6553
     stop = 4915
     reverse = 3277
 
-    if x[2] == "R":
+    if x == "R":
         set_servo(forward)
         time.sleep_ms(10)
         set_servo(stop)
-    elif x[2] == "L":
+    elif x == "L":
         set_servo(reverse)
         time.sleep_ms(10)
         set_servo(stop)
     else:
         pass
-    """
-    Idea: divide full circle of servo range into 14 sections (0:13)
-    -> each section is similarly subdivided
-    -> magnitude of the difference determines how many subsections are added
-        or taken away based off of L / R dominance
-    -> resets to be relative to current section
-    """
 
 #main
 while True:
-    a = photo_left_raw.read_u16()
-    b = photo_right_raw.read_u16()
+    left_raw = photo_left_pin.read_u16()
+    right_raw = photo_right_pin.read_u16()
 
-    left_real = downstep(a)
-    right_real = downstep(b)
+    left_real = downstep(left_raw)
+    right_real = downstep(right_raw)
 
     spinner(balance(left_real, right_real))
