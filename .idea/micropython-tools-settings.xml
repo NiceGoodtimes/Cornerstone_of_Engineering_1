@@ -3,6 +3,6 @@
   <component name="MicroPythonTools">
     <option name="lastShownVersion" value="2026.1.1" />
     <option name="pluginEnabled" value="true" />
-    <option name="portName" value="COM4" />
+    <option name="portName" value="COM5" />
   </component>
 </project>
