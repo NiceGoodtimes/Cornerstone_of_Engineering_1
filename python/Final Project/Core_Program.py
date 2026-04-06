@@ -21,7 +21,7 @@ from time import sleep
 VARIABLES
 """
 typing_delay = 0.1
-text_output = "No Text Provided"
+text_output = "No Text Provided" #this is only an initial value
 lcd_data = 0
 lcd_clock = 1
 
