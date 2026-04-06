@@ -7,8 +7,8 @@ from math import sqrt
 def pythagorean(a: int, b: int):
     c = sqrt(a^2 + b^2)
 
-    if c != c//1:
-        pass
+    if c%int(c) != 0.0:
+        return 0
     else:
         return int(c)
 
